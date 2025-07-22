@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch and Chill</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #000; color: #fff; overflow-x: hidden; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 50px; background: rgba(0,0,0,0.8);
+      position: fixed; width: 100%; top: 0; z-index: 1000;
+    }
+    .logo { font-size: 28px; font-weight: bold; color: #e50914; letter-spacing: 2px; }
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav ul li a {
+      text-decoration: none; color: #fff; font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #e50914; }
+
+    .hero {
+      position: relative; height: 90vh; overflow: hidden;
+      display: flex; align-items: center; padding: 0 50px; margin-top: 70px;
+    }
+    .bg-video iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -2; object-fit: cover;
+    }
+    .hero::after {
+      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5); z-index: -1;
+    }
+    .hero-content {
+      max-width: 500px; z-index: 1; background: rgba(7, 7, 7, 0.5);
+      padding: 20px; border-radius: 10px;
+    }
+    .hero-content h1 { font-size: 40px; margin-bottom: 20px; }
+    .hero-content p { font-size: 18px; margin-bottom: 20px; }
+    .btn {
+      padding: 10px 20px; background: #e50914; color: #fff;
+      border: none; cursor: pointer; font-size: 16px; border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #b0070f; }
+
+    .section { padding: 30px 50px; background: #111; }
+    .section h2 { font-size: 24px; margin-bottom: 20px; color: #e5e5e5; }
+
+    .movies {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+      gap: 15px;
+    }
+    .movies img {
+      width: 100%; border-radius: 8px; transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .movies img:hover { transform: scale(1.1); }
+
+    footer {
+      background: #000; text-align: center; padding: 15px;
+      font-size: 14px; color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Watch and Chill</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">My List</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION WITH AVENGERS TRAILER -->
+  <section class="hero">
+    <div class="bg-video">
+      <iframe
+        src="https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1&mute=1&loop=1&playlist=TcMBFSGVi1c"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="hero-content">
+      <h1>
+        <a href="https://www.imdb.com/title/tt4154796/" target="_blank" style="color:#fff;text-decoration:none;">
+          Avengers: Endgame
+        </a>
+      </h1>
+      <p>The epic finale of the Avengers saga. Watch Earth's mightiest heroes fight to save the universe.</p>
+      <button class="btn" id="muteBtn">Mute 🔈</button>
+    </div>
+  </section>
+
+  <!-- POPULAR MOVIES SECTION -->
+  <section class="section">
+    <h2>Popular Movies</h2>
+    <div class="movies">
+      <a href="https://www.imdb.com/title/tt0468569/" target="_blank">
+        <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight">
+      </a>
+      <a href="https://www.imdb.com/title/tt1375666/" target="_blank">
+        <img src="https://media.themoviedb.org/t/p/w188_and_h282_bestv2/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg" alt="Inception">
+      </a>
+      <a href="https://www.imdb.com/title/tt0816692/" target="_blank">
+        <img src="https://image.tmdb.org/t/p/w500/nrSaXF39nDfAAeLKksRCyvSzI2a.jpg" alt="Interstellar">
+      </a>
+      <a href="https://www.imdb.com/title/tt3498820/" target="_blank">
+        <img src="https://media.themoviedb.org/t/p/w188_and_h282_bestv2/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg" alt="Captain America: Civil War">
+      </a>
+      <a href="https://www.imdb.com/title/tt0145487/" target="_blank">
+        <img src="https://media.themoviedb.org/t/p/w188_and_h282_bestv2/gh4cZbhZxyTbgxQPxD0dOudNPTn.jpg" alt="Spider-Man">
+      </a>
+      <a href="https://www.imdb.com/title/tt0848228/" target="_blank">
+        <img src="https://media.themoviedb.org/t/p/w188_and_h282_bestv2/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg" alt="Avengers">
+      </a>
+    </div>
+  </section>
+
+  <!-- UPCOMING MOVIES SECTION -->
+  <section class="section">
+    <h2>Upcoming Movies</h2>
+    <div class="movies">
+      <a href="https://www.imdb.com/title/tt1825683/" target="_blank">
+        <img src="https://image.tmdb.org/t/p/w500/vbLxDKfo8fYC8ISKKrJczNbGKLP.jpg" alt="Black Panther 2">
+      </a>
+      <a href="https://www.imdb.com/title/tt9419884/" target="_blank">
+        <img src="https://media.themoviedb.org/t/p/w188_and_h282_bestv2/ddJcSKbcp4rKZTmuyWaMhuwcfMz.jpg" alt="Doctor Strange 2">
+      </a>
+      <a href="https://www.imdb.com/title/tt1877830/" target="_blank">
+        <img src="https://media.themoviedb.org/t/p/w188_and_h282_bestv2/9uydeANO6PLpD6Irh7qLizaEMjk.jpg" alt="The Batman">
+      </a>
+      <a href="https://www.imdb.com/title/tt10872600/" target="_blank">
+        <img src="https://media.themoviedb.org/t/p/w188_and_h282_bestv2/e2LLmI5wKIrWGAy9Of3yyWu7Szn.jpg" alt="Spider-Man: No Way Home">
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Watch and Chill | All Rights Reserved.
+  </footer>
+
+  <script>
+    const iframe = document.querySelector('.bg-video iframe');
+    const muteBtn = document.getElementById('muteBtn');
+
+    muteBtn.addEventListener('click', () => {
+      const params = new URLSearchParams(new URL(iframe.src).search);
+      if (params.get('mute') === '1') {
+        params.set('mute', '0');
+        muteBtn.textContent = 'Mute 🔇';
+      } else {
+        params.set('mute', '1');
+        muteBtn.textContent = 'Mute 🔈';
+      }
+      iframe.src = iframe.src.split('?')[0] + '?' + params.toString();
+    });
+  </script>
+</body>
+</html>

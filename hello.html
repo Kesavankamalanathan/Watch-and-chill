@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Watch and Chill</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body {
+      background: url('https://wallpaperaccess.com/full/329583.jpg') no-repeat center center/cover;
+      height: 100vh; display: flex; justify-content: center; align-items: center;
+    }
+
+    .overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px;
+      border-radius: 10px;
+      width: 350px;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .login-container h1 {
+      text-align: center;
+      color: #e50914;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .input-group input:focus {
+      outline: 2px solid #e50914;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #e50914;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #b0070f;
+    }
+
+    .extra-links {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .extra-links a {
+      color: #e50914;
+      text-decoration: none;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="login-container">
+    <h1>Watch and Chill</h1>
+    <form>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn"><a href="http://127.0.0.1:5501/movie.html">login</a></button>
+    </form>
+    <div class="extra-links">
+      <p>Don't have an account? <a href="#">Sign Up</a></p>
+      <p><a href="#">Forgot Password?</a></p>
+    </div>
+  </div>
+</body>
+</html>
